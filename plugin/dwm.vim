@@ -105,8 +105,8 @@ function! DWM_AutoEnter()
     return
   endif
 
-  " Skip quickfix buffers
-  if &l:buftype == 'quickfix'
+  " Skip quickfix and NERDTree buffers
+  if &l:buftype == 'quickfix' || &l:buftype == 'nofile'
     return
   endif
 
