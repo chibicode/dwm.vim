@@ -153,6 +153,7 @@ function! DWM_ResizeMasterPaneWidth()
   if exists("t:quickfix_buffer_closing")
     unlet! t:quickfix_buffer_closing
     bo copen
+    call GetQuickFixBufferNumber()
   end
 endfunction
 
