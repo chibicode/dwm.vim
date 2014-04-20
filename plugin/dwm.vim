@@ -133,6 +133,7 @@ function! DWM_ResizeMasterPaneWidth()
   if exists(":NERDTree") | NERDTreeClose | endif
   " Close quickfix
   if exists("t:quickfix_buffer_number")
+    let t:quickfix_buffer_closing = 1
     unlet! t:quickfix_buffer_number
     cclose
   end
@@ -148,6 +149,11 @@ function! DWM_ResizeMasterPaneWidth()
       exec 'vertical resize ' . g:dwm_master_pane_width
     endif
   endif
+  
+  if exists("t:quickfix_buffer_closing")
+    unlet! t:quickfix_buffer_closing
+    bo copen
+  end
 endfunction
 
 function! DWM_GrowMaster()
