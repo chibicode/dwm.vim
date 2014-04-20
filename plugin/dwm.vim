@@ -154,6 +154,7 @@ function! DWM_ResizeMasterPaneWidth()
     unlet! t:quickfix_buffer_closing
     bo copen
     call GetQuickFixBufferNumber()
+    wincmd p
   end
 endfunction
 
