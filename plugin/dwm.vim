@@ -131,6 +131,8 @@ endfunction
 function! DWM_ResizeMasterPaneWidth()
   " Close NERDTree
   if exists(":NERDTree") | NERDTreeClose | endif
+  " Close quickfix
+  cclose
    
   " Make all windows equally high and wide
   wincmd =
