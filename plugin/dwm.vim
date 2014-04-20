@@ -105,8 +105,8 @@ function! DWM_AutoEnter()
     return
   endif
 
-  " Skip quickfix and NERDTree buffers
-  if &l:buftype == 'quickfix' || &l:buftype == 'nofile'
+  " Skip quickfix buffers
+  if &l:buftype == 'quickfix'
     return
   endif
 
@@ -129,6 +129,9 @@ function! DWM_Close()
 endfunction
 
 function! DWM_ResizeMasterPaneWidth()
+  " Close NERDTree
+  if exists(":NERDTree") | NERDTreeClose | endif
+   
   " Make all windows equally high and wide
   wincmd =
 
